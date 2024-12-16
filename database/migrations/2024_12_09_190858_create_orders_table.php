@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('tel');
             $table->text('message');
-            $table->json('body');
+            $table->json('body')->nullable();
             $table->enum('status', ['new', 'accepted', 'rejected', 'completed']);
         });
     }

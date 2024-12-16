@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function home() {
-        return view('home');
+        $packages = Package::all();
+        return view('home', compact("packages"));
     }
 
 }

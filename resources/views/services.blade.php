@@ -26,113 +26,31 @@
                 Выбрать подходящий тариф
             </h2>
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Free Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Базовый</h3>
-                        <p class="mt-4 text-gray-400">Описение тарифа 1.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">100 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
 
-                <!-- Starter Plan -->
+                @foreach($weddings as $wedding)
                 <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
                     <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Стандартный</h3>
-                        <p class="mt-4 text-gray-400">Описание тарифа 2.</p>
+                        <h3 class="text-2xl font-semibold text-white">{{  $wedding->name }}</h3>
+                        <p class="mt-4 text-gray-400">{{  $wedding->description }}</p>
                     </div>
                     <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">200 б.р.</span>
+                        <span class="text-5xl font-extrabold text-white">{{  $wedding->price }}</span>
                     </div>
                     <ul class="flex-grow mb-8 space-y-4 text-gray-400">
+                        @foreach(explode(',', $wedding->services) as $service)
                         <li class="flex items-center">
                             <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span>Что входит 1</span>
+                            <span>{{ $service }}</span>
                         </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
+                        @endforeach
                     </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
+                    <a href="/order/{{ $wedding->id }}" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
                         Заказать
                     </a>
                 </div>
-
-                <!-- Pro Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Премиум</h3>
-                        <p class="mt-4 text-gray-400">Описание тарифа 3.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">300 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 4</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- Портретные фотосессии -->
@@ -150,113 +68,30 @@
                 Выбрать подходящий тариф
             </h2>
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Free Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Базовый</h3>
-                        <p class="mt-4 text-gray-400">Описение тарифа 1.</p>
+                @foreach($portrets as $portret)
+                    <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-white">{{  $portret->name }}</h3>
+                            <p class="mt-4 text-gray-400">{{  $portret->description }}</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-5xl font-extrabold text-white">{{  $portret->price }}</span>
+                        </div>
+                        <ul class="flex-grow mb-8 space-y-4 text-gray-400">
+                            @foreach(explode(',', $portret->services) as $service)
+                                <li class="flex items-center">
+                                    <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>{{ $service }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <a href="/order/{{ $portret->id }}" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
+                            Заказать
+                        </a>
                     </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">100 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
-
-                <!-- Starter Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Стандартный</h3>
-                        <p class="mt-4 text-gray-400">Описание тарифа 2.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">200 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
-
-                <!-- Pro Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Премиум</h3>
-                        <p class="mt-4 text-gray-400">Описание тарифа 3.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">300 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 4</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -275,113 +110,30 @@
                 Выбрать подходящий тариф
             </h2>
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Free Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Базовый</h3>
-                        <p class="mt-4 text-gray-400">Описение тарифа 1.</p>
+                @foreach($lovestories as $lovestory)
+                    <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-white">{{  $lovestory->name }}</h3>
+                            <p class="mt-4 text-gray-400">{{  $lovestory->description }}</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-5xl font-extrabold text-white">{{  $lovestory->price }}</span>
+                        </div>
+                        <ul class="flex-grow mb-8 space-y-4 text-gray-400">
+                            @foreach(explode(',', $lovestory->services) as $service)
+                                <li class="flex items-center">
+                                    <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>{{ $service }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <a href="/order/{{ $lovestory->id }}" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
+                            Заказать
+                        </a>
                     </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">100 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
-
-                <!-- Starter Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Стандартный</h3>
-                        <p class="mt-4 text-gray-400">Описание тарифа 2.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">200 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
-
-                <!-- Pro Plan -->
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">Премиум</h3>
-                        <p class="mt-4 text-gray-400">Описание тарифа 3.</p>
-                    </div>
-                    <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">300 б.р.</span>
-                    </div>
-                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 1</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 2</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 3</span>
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Что входит 4</span>
-                        </li>
-                    </ul>
-                    <a href="#" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                        Заказать
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

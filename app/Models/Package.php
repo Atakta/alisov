@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['name', 'description', 'price'];
+    protected $fillable = ['name', 'description', 'price', 'status', 'services'];
 }

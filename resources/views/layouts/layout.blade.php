@@ -21,7 +21,7 @@
                     Alisov
                 </a>
             </div>
-            <div class="hidden md:flex items-center space-x-12 tracking-widest navbar">
+            <div class="hidden md:flex items-center space-x-12 tracking-widest uppercase">
                 <a href="/" class="navbar-item text-white hover:text-cyan-500">Главная</a>
                 <a href="/services" class="navbar-item text-white hover:text-cyan-500">Услуги</a>
                 <a href="/portfolio" class="navbar-item text-white hover:text-cyan-500">Портфолио</a>

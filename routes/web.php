@@ -17,5 +17,9 @@ Route::post('/review/check', [ReviewController::class, 'review_check']);
 
 Route::get('/portfolio/{catalog?}', [PortfolioController::class, 'getPhotos']);
 
+Route::post('/order', [PackageController::class, 'postOrder']);
+
+Route::get('/order/{package}', [PackageController::class, 'getPackage']);
+
 
 

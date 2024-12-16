@@ -26,7 +26,7 @@
                             <div class="modal-box">
                                 <h3 class="text-lg font-bold text-center">Заказать фотосессию</h3>
                                 <div class="modal-action justify-center">
-                                    <form method="post" class="w-full">
+                                    <form method="post" action="/order" class="w-full">
                                         @csrf
                                         <div class="mb-4">
                                             <label for="name" class="block text-sm font-medium">Имя</label>
@@ -47,25 +47,19 @@
                                                    placeholder="Ваш телефон">
                                         </div>
                                         <div class="mb-4">
-                                            <label for="options" class="block text-sm font-medium">Пакет услуг</label>
-                                            <select id="options" name="options" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500">
-                                                <option value=""selected>Выбрать</option>
-                                                <option value="option1">Пакет 1</option>
-                                                <option value="option2">Пакет 2</option>
-                                                <option value="option3">Пакет 3</option>
-                                                <option value="option3">Пакет 4</option>
-                                                <option value="option3">Пакет 5</option>
-                                                <option value="option3">Пакет 6</option>
-                                                <option value="option3">Пакет 7</option>
-                                                <option value="option3">Пакет 8</option>
-                                                <option value="option3">Пакет 9</option>
+                                            <label for="package" class="block text-sm font-medium">Пакет услуг</label>
+                                            <select id="package" name="package" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 focus:border-blue-500">
+                                                <option value="">Выбрать</option>
+                                                @foreach($packages as $package)
+                                                    <option value="{{ $package->id }}">{{ $package->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="mb-4">
-                                            <label for="review" class="block text-sm font-medium">Сообщение</label>
-                                            <textarea id="review" name="review" required rows="4"
+                                            <label for="message" class="block text-sm font-medium">Сообщение</label>
+                                            <textarea id="message" name="message" required rows="4"
                                                       class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
-                                                      placeholder="Ваш отзыв"></textarea>
+                                                      placeholder="Ваши комментарии"></textarea>
                                         </div>
                                         <button type="submit"
                                                 class="btn bg-green-400 hover:bg-green-200">
