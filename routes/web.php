@@ -21,5 +21,7 @@ Route::post('/order', [PackageController::class, 'postOrder']);
 
 Route::get('/order/{package}', [PackageController::class, 'getPackage']);
 
+Route::get('/contacts', [MainController::class, 'contacts']);
+
 
 

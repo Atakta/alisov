@@ -9,26 +9,22 @@
     box-sizing: border-box;
 }
 
-:root {
-    --index: calc(1vw + 1vh);
-    --swiper-theme-color: white;
-    --swiper-navigation-size: 30px;
-    --swiper-navigation-sides-offset: 40px;
-    --swiper-pagination-bottom: 20px;
-    --swiper-pagination-bullet-inactive-color: gainsboro;
-    --swiper-pagination-bullet-inactive-opacity: 0.4;
-}
-
 html {
     font-family: 'Rubik', sans-serif;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .Bg {
-    background-color: #0a0a0a;
+    background-color: #080808;
+}
+
+.main_bg {
+    background-image: url('/public/img/main_bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* ШАПКА */
@@ -44,88 +40,6 @@ header {
 
 /* ГЛАВНАЯ */
 
-.slider {
-    height: 90vh;
-}
 
-.slider .slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.slide_content {
-    text-align: center;
-    opacity: 0;
-    transition: opacity .25s ease;
-}
 
-.swiper-slide-active .slide_content {
-    opacity: 1;
-}
-.slide_content h2 {
-    font-size: calc(var(--index) * 4);
-    text-transform: uppercase;
-    letter-spacing: calc(var(--index) * 1.5);
-    margin-bottom: calc(var(--index) * 2);
-    position: relative;
-}
-
-.slide_content .name {
-    font-size: calc(var(--index) * 2);
-    letter-spacing: calc(var(--index) * 0.5);
-    text-transform: none;
-    opacity: 1;
-}
-
-.slide_content h2::after {
-    content: '';
-    height: 1px;
-    width: 20%;
-    background-color: rgba(255, 255, 255, .3);
-    position: absolute;
-    left: 40%;
-    bottom: calc(var(--index) * -1);
-}
-
-.slide_content p {
-    font-size: calc(var(--index) * 1);
-    text-transform: uppercase;
-    opacity: .7;
-    letter-spacing: calc(var(--index) * .2);
-    margin-bottom: calc(var(--index) * 2);
-}
-
-.slide_content .reason{
-    margin-bottom: calc(var(--index) * 1);
-}
-
-.slide .slide_content > button {
-    --button-color: rgba(255, 255, 255, .9);
-    padding: 10px 40px;
-    font-size: 15px;
-    border-radius: 10em;
-    background-color: transparent;
-    border: 2px solid var(--button-color);
-    color: var(--button-color);
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-}
-.slider-navigation > * {
-    border: 1.5px solid var(--swiper-theme-color);
-    border-radius: 10em;
-    width: 55px;
-    height: 55px;
-}
-
-.video-background {
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-video {
-    max-width: none;
-}

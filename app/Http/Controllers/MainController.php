@@ -12,4 +12,8 @@ class MainController extends Controller
         return view('home', compact("packages"));
     }
 
+    public function contacts() {
+        return view('contacts');
+    }
+
 }
