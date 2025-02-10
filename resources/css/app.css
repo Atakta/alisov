@@ -11,6 +11,7 @@
 
 html {
     font-family: 'Rubik', sans-serif;
+    font-size: calc(0.5rem + 0.5vw);
 }
 
 .container {
@@ -26,6 +27,7 @@ html {
     background-size: cover;
     background-position: center;
 }
+
 
 /* ШАПКА */
 header {

@@ -12,11 +12,11 @@
 
 @section('main_content')
 
-    <section class="min-h-[90vh] main_bg">
+    <section class="min-h-[50vh] lg:min-h-[90vh] main_bg">
         <div class="container mx-auto">
-            <div class="flex flex-col max-w-max">
-                <h1 class="font-bold tracking-tighter text-4xl">Привет, меня зовут</h1>
-                <h2 class="font-comforter text-secondary text-5xl text-shadow-custom translate-x-8">Дмитрий Алисов</h2>
+            <div class="flex flex-col max-w-max mx-auto pt-40 md:mx-0 md:pl-40">
+                <h1 class="font-bold tracking-tighter text-5xl">Привет, меня зовут</h1>
+                <h2 class="font-comforter text-secondary text-6xl text-shadow-custom translate-x-8">Дмитрий Алисов</h2>
                 <p class="text-accent uppercase text-base">Я опытный фотограф</p>
                 <button class="self-center text-white uppercase rounded-md bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300
                 dark:focus:ring-teal-800 font-medium text-sm px-5 py-2 mt-6 text-center mr-2 mb-2" onclick="my_modal.showModal()">Заказать</button>

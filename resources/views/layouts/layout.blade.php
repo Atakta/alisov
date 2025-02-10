@@ -17,7 +17,7 @@
     <nav class="container px-6 py-3">
         <div class="flex justify-between items-center">
             <div class="flex items-center">
-                <a href="/" class="text-xl font-bold md:text-2xl hover:text-cyan-500">
+                <a href="/">
                     <img src="{{ asset('img/logo.png') }}" alt="Логотип" class="max-w-12">
                 </a>
             </div>
