@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('main_content')
-<div class="container mx-auto">
+<div class="container">
 <form method="post" action="/order" class="w-2/4 mx-auto text-white">
     @csrf
     <input type="hidden" name="package" value="{{$package->id}}">

@@ -4,7 +4,7 @@
 
 @section('main_content')
 
-    <div class="py-10 container mx-auto">
+    <div class="py-10 container">
         <div class="p-[50px] rounded-xl bg-black/60 shadow-[0_0_20px_rgba(0,0,0,0.8)]">
             <h1 class="text-5xl pt-6 text-white text-center">Мое портфолио</h1>
             <div class="my-10 row flex justify-center">

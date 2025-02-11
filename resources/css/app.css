@@ -16,6 +16,7 @@ html {
 
 .container {
     max-width: 1400px;
+    margin: 0 auto;
 }
 
 .Bg {
@@ -29,18 +30,7 @@ html {
 }
 
 
-/* ШАПКА */
-header {
-    display: flex;
-    justify-content: center;
-    background-color: #18181b;
-}
 
-.navbar {
-    text-transform: uppercase;
-}
-
-/* ГЛАВНАЯ */
 
 
 

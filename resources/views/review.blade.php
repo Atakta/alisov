@@ -3,7 +3,7 @@
 @section('title', 'Отзывы')
 
 @section('main_content')
-<div class="container mx-auto text-black">
+<div class="container text-black">
     <div class="p-6 mt-6 bg-gradient-to-r from-blue-200 to-cyan-200 w-2/4 mx-auto rounded-md">
         <h1 class="mb-3 text-center text-xl">Оставьте ваш отзыв</h1>
         @if($errors->any())

@@ -13,7 +13,7 @@
 @section('main_content')
 
     <section class="min-h-[50vh] lg:min-h-[90vh] main_bg">
-        <div class="container mx-auto">
+        <div class="container">
             <div class="flex flex-col max-w-max mx-auto pt-40 md:mx-0 md:pl-40">
                 <h1 class="font-bold tracking-tighter text-5xl">Привет, меня зовут</h1>
                 <h2 class="font-comforter text-secondary text-6xl text-shadow-custom translate-x-8">Дмитрий Алисов</h2>

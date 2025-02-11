@@ -9,7 +9,7 @@
             Мои услуги
         </h2>
     </div>
-    <section class="container mx-auto py-12">
+    <section class="container py-12">
         <!-- Свадебные фотосессии -->
         <div class="mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="my-8 font-bold text-white sm:text-4xl">

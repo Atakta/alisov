@@ -13,7 +13,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="Bg text-primary">
-<header class="bg-transparent relative">
+<header>
     <nav class="container px-6 py-3">
         <div class="flex justify-between items-center">
             <div class="flex items-center">
