@@ -5,46 +5,49 @@
 @section('main_content')
 
     <div class="py-10 container">
-        <div class="p-[50px] rounded-xl bg-black/60 shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-            <h1 class="text-5xl pt-6 text-white text-center">Мое портфолио</h1>
-            <div class="my-10 row flex justify-center">
-                @if($catalog)
+        <h1 class="font-rubik-dirt text-5xl pt-6 text-secondary uppercase opacity-25 text-center">портфолио</h1>
+        <p class="text-xl text-center font-bold -mt-6 relative z-2">Ознакомьтесь с моими работами</p>
+        <div class="my-10 row flex justify-center">
+            @if($catalog)
                 <a
-                    class="rounded-md rounded-r-none bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                    class="rounded-md rounded-r-none bg-black py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-900 focus:shadow-none active:bg-slate-900 hover:bg-slate-900 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                     href="{{ asset("portfolio") }}"
                 >
                     Все
                 </a>
-                @else
+            @else
+                <span
+                    class="rounded-md rounded-r-none bg-secondary bg-opacity-25 py-2 px-4 border border-transparent text-center text-sm text-white ">
+                    Все
+                </span>
+            @endif
+            @foreach($cats as $cat)
+                @if($cat->url == $catalog)
                     <span
-                        class="rounded-md rounded-r-none bg-slate-600 py-2 px-4 border border-transparent text-center text-sm text-white ">
-                        Все
+                        class="@if($loop->last)rounded-md rounded-l-none @else rounded-none @endif  bg-secondary bg-opacity-25 py-2 px-4 border border-transparent  text-center text-sm text-white transition-all">
+                        {{ $cat->name }}
                     </span>
+                @else
+                    <a
+                        class="@if($loop->last)rounded-md rounded-l-none  @else rounded-none @endif bg-black py-2 px-4 border-l border-r border-[#080808] text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-900 focus:shadow-none active:bg-slate-900 hover:bg-slate-900 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        href="{{ asset("portfolio/" . $cat->url) }}">
+                        {{ $cat->name }}
+                    </a>
                 @endif
-                @foreach($cats as $cat)
-                    @if($cat->url == $catalog)
-                        <span
-                            class="@if($loop->last)rounded-md rounded-l-none @else rounded-none @endif  bg-slate-600 py-2 px-4 border border-transparent  text-center text-sm text-white transition-all"
-                        >
-                            {{ $cat->name }}
-                        </span>
-                    @else
-                        <a
-                            class="@if($loop->last)rounded-md rounded-l-none @else rounded-none @endif bg-slate-800 py-2 px-4 border-l border-r border-slate-700 text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                            href="{{ asset("portfolio/" . $cat->url) }}"
-                        >
-                            {{ $cat->name }}
-                        </a>
-                    @endif
-                @endforeach
-            </div>
-            <div class="mt-6 flex flex-wrap justify-around gap-6">
-                @foreach($photos as $photo)
-                    <img class="w-[500px] h-[300px] bg-white shadow-[3px_3px_10px_2px_rgba(0,0,0,0.8)]"
-                         src="{{ asset('storage/' . $photo->url) }}" alt="{{ $photo->title }}">
-                @endforeach
-            </div>
+            @endforeach
         </div>
+        <div class="list">
+            @foreach($photos as $photo)
+                <div class="pic">
+                    <img src="{{ asset('storage/' . $photo->url) }}" alt="{{ $photo->title }}">
+                </div>
+            @endforeach
+        </div>
+        <div class="mt-12 flex flex-col items-center">
+            <p class="text-base font-bold text-center">Большое количество хороших отзывов поможет вам <br>  окончательно определиться с выбором</p>
+            <a href="/review" class="mt-6 border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Отзывы</a>
+        </div>
+
     </div>
 
 @endsection

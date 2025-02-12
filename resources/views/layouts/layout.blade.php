@@ -8,7 +8,7 @@
     <title>@yield('title')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Rubik+Dirt&family=Comforter+Brush&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Rubik+Dirt&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     @stack('styles')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -23,27 +23,27 @@
             </div>
             <ul class="flex items-center space-x-12 tracking-widest uppercase text-xs">
                 <li>
-                    <a href="/" class="inline-block hover:text-secondary border-b-2 border-transparent hover:border-[#36DDA3] transition-colors duration-300 py-2">
+                    <a href="/" class="inline-block border-b-2 border-transparent {{ request()->is('/') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
                         Главная
                     </a>
                 </li>
                 <li>
-                    <a href="/services" class="inline-block hover:text-secondary border-b-2 border-transparent hover:border-[#36DDA3] transition-colors duration-300 py-2">
+                    <a href="/services" class="inline-block border-b-2 border-transparent {{ request()->is('services') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
                         Услуги
                     </a>
                 </li>
                 <li>
-                    <a href="/portfolio" class="inline-block hover:text-secondary border-b-2 border-transparent hover:border-[#36DDA3] transition-colors duration-300 py-2">
+                    <a href="/portfolio" class="inline-block border-b-2 border-transparent {{ request()->is('portfolio') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
                         Портфолио
                     </a>
                 </li>
                 <li>
-                    <a href="/review" class="inline-block hover:text-secondary border-b-2 border-transparent hover:border-[#36DDA3] transition-colors duration-300 py-2">
+                    <a href="/review" class="inline-block border-b-2 border-transparent {{ request()->is('review') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
                         Отзывы
                     </a>
                 </li>
                 <li>
-                    <a href="/contacts" class="inline-block hover:text-secondary border-b-2 border-transparent hover:border-[#36DDA3] transition-colors duration-300 py-2">
+                    <a href="/contacts" class="inline-block border-b-2 border-transparent {{ request()->is('contacts') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
                         Контакты
                     </a>
                 </li>
