@@ -29,19 +29,12 @@ html {
     background-position: center;
 }
 
+/* Галерея */
 .list {
     columns: 400px;
     column-gap: 2rem;
     padding: 2rem;
 }
-
-/* Галерея */
 .pic {
     margin-bottom: 2rem;
 }
-.pic img {
-    width: 100%;
-    display: block;
-}
-
-
