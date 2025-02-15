@@ -23,27 +23,27 @@
             </div>
             <ul class="flex items-center space-x-12 tracking-widest uppercase text-xs">
                 <li>
-                    <a href="/" class="inline-block border-b-2 border-transparent {{ request()->is('/') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
+                    <a href="/" class="inline-block border-b-2 {{ request()->is('/') ? 'text-secondary border-[#36DDA3]' : 'border-transparent' }} hover:text-secondary transition-colors duration-300 py-2">
                         Главная
                     </a>
                 </li>
                 <li>
-                    <a href="/services" class="inline-block border-b-2 border-transparent {{ request()->is('services') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
+                    <a href="/services" class="inline-block border-b-2 {{ request()->is('services') ? 'text-secondary border-[#36DDA3]' : 'border-transparent' }} hover:text-secondary transition-colors duration-300 py-2">
                         Услуги
                     </a>
                 </li>
                 <li>
-                    <a href="/portfolio" class="inline-block border-b-2 border-transparent {{ request()->is('portfolio') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
+                    <a href="/portfolio" class="inline-block border-b-2 {{ request()->is('portfolio') ? 'text-secondary border-[#36DDA3]' : 'border-transparent' }} hover:text-secondary transition-colors duration-300 py-2">
                         Портфолио
                     </a>
                 </li>
                 <li>
-                    <a href="/review" class="inline-block border-b-2 border-transparent {{ request()->is('review') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
+                    <a href="/review" class="inline-block border-b-2 {{ request()->is('review') ? 'text-secondary border-[#36DDA3]' : 'border-transparent' }} hover:text-secondary transition-colors duration-300 py-2">
                         Отзывы
                     </a>
                 </li>
                 <li>
-                    <a href="/contacts" class="inline-block border-b-2 border-transparent {{ request()->is('contacts') ? 'text-secondary border-[#36DDA3]' : '' }} hover:text-secondary transition-colors duration-300 py-2">
+                    <a href="/contacts" class="inline-block border-b-2  {{ request()->is('contacts') ? 'text-secondary border-[#36DDA3]' : 'border-transparent' }} hover:text-secondary transition-colors duration-300 py-2">
                         Контакты
                     </a>
                 </li>

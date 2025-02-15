@@ -12,6 +12,7 @@
 html {
     font-family: 'Rubik', sans-serif;
     font-size: calc(0.5rem + 0.5vw);
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -38,3 +39,4 @@ html {
 .pic {
     margin-bottom: 2rem;
 }
+

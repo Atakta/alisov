@@ -72,4 +72,49 @@
         </div>
     </section>
 
+    <section class="py-16 min-h-[50vh] lg:min-h-[100vh] bg-none md:bg-[url('/public/img/dima.png')] md:bg-right md:bg-bottom md:bg-contain md:bg-no-repeat">
+        <div class="container">
+            <h1 class="font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Обо мне</h1>
+            <p class="text-xl text-center font-bold -mt-6 relative z-2">Несколько слов о фотографе</p>
+            <div class="bg-black mt-20 p-16 w-full md:w-1/2 lg:ml-32 lg:mt-32 flex flex-col shadow-md shadow-black">
+                <h2 class="text-center">Давайте познакомимся :)</h2>
+                <p class="pt-12">Описание, чем фотограф занимается.  It is a long established fact that a reader will be distracted by the readable content of
+                    a page when looking at its layout. The point of using Lorem Ipsum. It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout.   It is a long established fact that a reader will be distracted
+                    by the readable content of a page when looking at its layout. The point of using Lorem Ipsum. It is a long established fact that a
+                    reader will be distracted by the readable content of a page when looking at its layout. </p>
+                <div class="flex justify-center gap-8 mt-4">
+                    <a href="/services" class="mt-6 border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Все услуги</a>
+                    <a href="/portfolio" class="mt-6 border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Портфолио</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-[50vh] lg:min-h-screen bg-[url('/public/img/benefits_bg.png')] bg-center bg-cover no-repeat">
+        <div class="container py-16">
+            <h1 class="font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Преимущества</h1>
+            <p class="text-xl text-center font-bold -mt-6 relative z-2">Выбирая меня, вы получаете:</p>
+            <div class="flex flex-col gap-3 w-2/3 md:w-1/2 mt-20 ml-auto">
+                <div class="bg-black p-8 shadow-md shadow-black">
+                    <h2 class="text-accent">Высокое качество</h2>
+                    <p>Большой опыт и ответственное отношение позволяют мне гарантировать классный результат</p>
+                </div>
+                <div class="bg-black p-8 shadow-md shadow-black">
+                    <h2 class="text-accent">Приятные цены</h2>
+                    <p>Стоимость моих услуг приятно занижена</p>
+                </div>
+                <div class="bg-black p-8 shadow-md shadow-black">
+                    <h2 class="text-accent">Сжатые сроки</h2>
+                    <p>Гарантирую получение результата в кратчайший срок</p>
+                </div>
+                <div class="bg-black p-8 shadow-md shadow-black">
+                    <h2 class="text-accent">Индивидуальный подход</h2>
+                    <p>Всегда открыт для диалога и ваших предложений</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 @endsection
