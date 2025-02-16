@@ -12,7 +12,7 @@
 
 @section('main_content')
 
-    <section class="min-h-[50vh] lg:min-h-[90vh] main_bg">
+    <section class="min-h-[50vh] lg:min-h-[90vh] bg-[url('/public/img/main_bg1.jpg')] bg-center bg-cover">
         <div class="container">
             <div class="flex flex-col max-w-max mx-auto pt-40 md:mx-0 md:pl-40">
                 <h1 class="font-bold tracking-tighter text-5xl">Привет, меня зовут</h1>
@@ -76,7 +76,7 @@
         <div class="container">
             <h1 class="font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Обо мне</h1>
             <p class="text-xl text-center font-bold -mt-6 relative z-2">Несколько слов о фотографе</p>
-            <div class="bg-black mt-20 p-16 w-full md:w-1/2 lg:ml-32 lg:mt-32 flex flex-col shadow-md shadow-black">
+            <div class="bg-black mt-6 p-16 w-full md:w-1/2 lg:ml-32 lg:mt-20 flex flex-col shadow-md shadow-black">
                 <h2 class="text-center">Давайте познакомимся :)</h2>
                 <p class="pt-12">Описание, чем фотограф занимается.  It is a long established fact that a reader will be distracted by the readable content of
                     a page when looking at its layout. The point of using Lorem Ipsum. It is a long established fact that a reader will be distracted
@@ -91,8 +91,8 @@
         </div>
     </section>
 
-    <section class="min-h-[50vh] lg:min-h-screen bg-[url('/public/img/benefits_bg.png')] bg-center bg-cover no-repeat">
-        <div class="container py-16">
+    <section class="py-16 min-h-[50vh] lg:min-h-screen bg-[url('/public/img/benefits_bg.png')] bg-center bg-cover no-repeat">
+        <div class="container">
             <h1 class="font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Преимущества</h1>
             <p class="text-xl text-center font-bold -mt-6 relative z-2">Выбирая меня, вы получаете:</p>
             <div class="flex flex-col gap-3 w-2/3 md:w-1/2 mt-20 ml-auto">

@@ -57,7 +57,7 @@
 </div>
 
 <footer>
-    <div class="flex justify-center py-8">
+    <div class="mt-12 flex justify-center py-8">
         <div class="flex flex-col">
             <p>Copyright &copy; 2025 Алисов Дмитрий</p>
             <div class="flex justify-center gap-2 mt-5">

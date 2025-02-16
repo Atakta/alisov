@@ -4,138 +4,125 @@
 
 @section('main_content')
 
-    <div class="text-center">
-        <h2 class="mt-10 text-4xl font-bold text-white sm:text-5xl">
-            Мои услуги
-        </h2>
-    </div>
-    <section class="container py-12">
-        <!-- Свадебные фотосессии -->
-        <div class="mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="my-8 font-bold text-white sm:text-4xl">
-                Свадебные фотосессии
-            </h1>
-            <div class="flex gap-8">
-            <p class="flex-1 mt-4 mb-6 text-xl bg-[#0a0a0a] text-gray-400">
-                    Описание свадебных фотосессий. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <img class="flex-1 size-full rounded-l-full" src="{{ asset('img/wedding.jpg') }}" alt="">
+<div class="container px-8">
+    <h1 class="pt-16 font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Услуги</h1>
+    <p class="text-xl text-center font-bold -mt-6 relative z-2">Что я могу предложить?</p>
+        <!-- Портретные фотосессии -->
+    <section>
+        <h1 class="mt-16 font-bold text-3xl uppercase">Портретная съемка</h1>
+        <div class="mt-4 bg-[url('/public/img/portret_bg.jpg')] bg-center bg-cover h-96">
+            <div class="flex flex-col justify-between md:ml-auto p-8 w-full md:w-1/3 h-full bg-black bg-opacity-70">
+                <p>Описание портретной съемки</p>
+                <a href="/portfolio/portrait" class="self-center border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Портфолио</a>
             </div>
-
-            <h2 class="my-10 text-center font-bold text-white sm:text-3xl">
-                Выбрать подходящий тариф
-            </h2>
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-                @foreach($weddings as $wedding)
-                <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
+        </div>
+        <h1 class="pt-16 font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Пакеты услуг</h1>
+        <p class="text-xl text-center font-bold -mt-6 relative z-2">Портретная съемка</p>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach($portrets as $portret)
+                <div class="flex flex-col mt-12 bg-black service-shadow  p-12 transform hover:scale-105 transition duration-300">
                     <div class="mb-8">
-                        <h3 class="text-2xl font-semibold text-white">{{  $wedding->name }}</h3>
-                        <p class="mt-4 text-gray-400">{{  $wedding->description }}</p>
+                        <h3 class="text-2xl font-semibold text-center">{{  $portret->name }}</h3>
+                        <p class="mt-8 text-gray-400">{{  $portret->description }}</p>
                     </div>
                     <div class="mb-8">
-                        <span class="text-5xl font-extrabold text-white">{{  $wedding->price }}</span>
+                        <span class="text-4xl font-extrabold">{{  $portret->price . " BYN"}}</span>
                     </div>
                     <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                        @foreach(explode(',', $wedding->services) as $service)
-                        <li class="flex items-center">
-                            <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>{{ $service }}</span>
-                        </li>
+                        @foreach(explode(',', $portret->services) as $service)
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>{{ $service }}</span>
+                            </li>
                         @endforeach
                     </ul>
-                    <a href="/order/{{ $wedding->id }}" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
+                    <a href="/order/{{ $portret->id }}" class="block w-full py-2 px-4 text-center rounded-md uppercase font-medium bg-gradient-to-r from-green-800 to-green-300 hover:from-green-300 hover:to-green-800">
                         Заказать
                     </a>
                 </div>
-                @endforeach
-            </div>
-        </div>
-        <!-- Портретные фотосессии -->
-        <div class="mx-auto mt-20 px-4 sm:px-6 lg:px-8">
-            <h1 class="mb-8 font-bold text-white sm:text-4xl">
-                Портретные фотосессии
-            </h1>
-            <div class="flex gap-8">
-                <p class="flex-1 mt-4 mb-6 text-xl bg-[#0a0a0a] text-gray-400">
-                    Описание свадебных фотосессий. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <img class="flex-1 size-full rounded-l-full" src="{{ asset('img/portret.jpg') }}" alt="">
-            </div>
-            <h2 class="my-10 text-center font-bold text-white sm:text-3xl">
-                Выбрать подходящий тариф
-            </h2>
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach($portrets as $portret)
-                    <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                        <div class="mb-8">
-                            <h3 class="text-2xl font-semibold text-white">{{  $portret->name }}</h3>
-                            <p class="mt-4 text-gray-400">{{  $portret->description }}</p>
-                        </div>
-                        <div class="mb-8">
-                            <span class="text-5xl font-extrabold text-white">{{  $portret->price }}</span>
-                        </div>
-                        <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                            @foreach(explode(',', $portret->services) as $service)
-                                <li class="flex items-center">
-                                    <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>{{ $service }}</span>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="/order/{{ $portret->id }}" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                            Заказать
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <!-- Love story фотосессии -->
-        <div class="mx-auto mt-20 px-4 sm:px-6 lg:px-8">
-            <h1 class="mb-8 font-bold text-white sm:text-4xl">
-                Love story фотосессии
-            </h1>
-            <div class="flex gap-8">
-                <p class="flex-1 mt-4 mb-6 text-xl bg-[#0a0a0a] text-gray-400">
-                    Описание свадебных фотосессий. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <img class="flex-1 size-full rounded-l-full" src="{{ asset('img/lovestory.jpg') }}" alt="">
-            </div>
-            <h2 class="my-10 text-center font-bold text-white sm:text-3xl">
-                Выбрать подходящий тариф
-            </h2>
-            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach($lovestories as $lovestory)
-                    <div class="flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition duration-300">
-                        <div class="mb-8">
-                            <h3 class="text-2xl font-semibold text-white">{{  $lovestory->name }}</h3>
-                            <p class="mt-4 text-gray-400">{{  $lovestory->description }}</p>
-                        </div>
-                        <div class="mb-8">
-                            <span class="text-5xl font-extrabold text-white">{{  $lovestory->price }}</span>
-                        </div>
-                        <ul class="flex-grow mb-8 space-y-4 text-gray-400">
-                            @foreach(explode(',', $lovestory->services) as $service)
-                                <li class="flex items-center">
-                                    <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>{{ $service }}</span>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="/order/{{ $lovestory->id }}" class="block w-full py-3 px-6 text-center rounded-md text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
-                            Заказать
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
     </section>
 
+            <!-- Свадебные фотосессии -->
+    <section>
+        <h1 class="mt-16 font-bold text-3xl uppercase">Свадебная съемка</h1>
+        <div class="mt-4 bg-[url('/public/img/wedding_bg.jpg')] bg-center bg-cover h-96">
+            <div class="flex flex-col justify-between md:mr-auto p-8 w-full md:w-1/3 h-full bg-black bg-opacity-70">
+                <p>Описание свадебной съемки</p>
+                <a href="/portfolio/weddings" class="self-center border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Портфолио</a>
+            </div>
+        </div>
+        <h1 class="pt-16 font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Пакеты услуг</h1>
+        <p class="text-xl text-center font-bold -mt-6 relative z-2">Свадебная съемка</p>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach($weddings as $wedding)
+            <div class="flex flex-col mt-12 bg-black service-shadow  p-12 transform hover:scale-105 transition duration-300">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-semibold">{{  $wedding->name }}</h3>
+                    <p class="mt-4 text-gray-400">{{  $wedding->description }}</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-extrabold">{{  $wedding->price . " BYN"}}</span>
+                </div>
+                <ul class="flex-grow mb-8 space-y-4 text-gray-400">
+                    @foreach(explode(',', $wedding->services) as $service)
+                    <li class="flex items-center">
+                        <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{{ $service }}</span>
+                    </li>
+                    @endforeach
+                </ul>
+                <a href="/order/{{ $wedding->id }}" class="block w-full py-2 px-4 text-center rounded-md uppercase font-medium bg-gradient-to-r from-green-800 to-green-300 hover:from-green-300 hover:to-green-800">
+                    Заказать
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </section>
+
+
+            <!-- Love story фотосессии -->
+    <section>
+        <h1 class="mt-16 font-bold text-3xl uppercase">Съемка love story</h1>
+        <div class="mt-4 bg-[url('/public/img/love_bg.jpg')] bg-center bg-cover h-96">
+            <div class="flex flex-col justify-between md:ml-auto p-8 w-full md:w-1/3 h-full bg-black bg-opacity-70">
+                <p>Описание love story съемки</p>
+                <a href="/portfolio/lovestory" class="self-center border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Портфолио</a>
+            </div>
+        </div>
+        <h1 class="pt-16 font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Пакеты услуг</h1>
+        <p class="text-xl text-center font-bold -mt-6 relative z-2">Съемка love story</p>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach($lovestories as $lovestory)
+                <div class="flex flex-col mt-12 bg-black service-shadow  p-12 transform hover:scale-105 transition duration-300">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold">{{  $lovestory->name }}</h3>
+                        <p class="mt-4 text-gray-400">{{  $lovestory->description }}</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-extrabold">{{  $lovestory->price . " BYN" }}</span>
+                    </div>
+                    <ul class="flex-grow mb-8 space-y-4 text-gray-400">
+                        @foreach(explode(',', $lovestory->services) as $service)
+                            <li class="flex items-center">
+                                <svg class="h-6 w-6 text-green-500 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span>{{ $service }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="/order/{{ $lovestory->id }}" class="block w-full py-2 px-4 text-center rounded-md uppercase font-medium bg-gradient-to-r from-green-800 to-green-300 hover:from-green-300 hover:to-green-800">
+                        Заказать
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </section>
+</div>
 @endsection

@@ -24,11 +24,6 @@ html {
     background-color: #080808;
 }
 
-.main_bg {
-    background-image: url('/public/img/main_bg.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
 /* Галерея */
 .list {
@@ -40,3 +35,6 @@ html {
     margin-bottom: 2rem;
 }
 
+.service-shadow {
+    box-shadow: 8px 8px 8px -5px rgba(54, 221, 163, 0.2);
+}
