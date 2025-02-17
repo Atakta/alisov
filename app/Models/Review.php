@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['name', 'email', 'review', 'status'];
+    protected $fillable = ['name', 'email', 'review', 'status', 'review_date'];
+
+    protected $casts = [
+        'review_date' => 'datetime',
+    ];
 }

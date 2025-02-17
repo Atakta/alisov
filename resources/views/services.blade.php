@@ -9,7 +9,7 @@
     <p class="text-xl text-center font-bold -mt-6 relative z-2">Что я могу предложить?</p>
         <!-- Портретные фотосессии -->
     <section>
-        <h1 class="mt-16 font-bold text-3xl uppercase">Портретная съемка</h1>
+        <h1 class="mt-24 font-bold text-3xl uppercase">Портретная съемка</h1>
         <div class="mt-4 bg-[url('/public/img/portret_bg.jpg')] bg-center bg-cover h-96">
             <div class="flex flex-col justify-between md:ml-auto p-8 w-full md:w-1/3 h-full bg-black bg-opacity-70">
                 <p>Описание портретной съемки</p>
@@ -48,7 +48,7 @@
 
             <!-- Свадебные фотосессии -->
     <section>
-        <h1 class="mt-16 font-bold text-3xl uppercase">Свадебная съемка</h1>
+        <h1 class="mt-24 font-bold text-3xl uppercase">Свадебная съемка</h1>
         <div class="mt-4 bg-[url('/public/img/wedding_bg.jpg')] bg-center bg-cover h-96">
             <div class="flex flex-col justify-between md:mr-auto p-8 w-full md:w-1/3 h-full bg-black bg-opacity-70">
                 <p>Описание свадебной съемки</p>
@@ -88,7 +88,7 @@
 
             <!-- Love story фотосессии -->
     <section>
-        <h1 class="mt-16 font-bold text-3xl uppercase">Съемка love story</h1>
+        <h1 class="mt-24 font-bold text-3xl uppercase">Съемка love story</h1>
         <div class="mt-4 bg-[url('/public/img/love_bg.jpg')] bg-center bg-cover h-96">
             <div class="flex flex-col justify-between md:ml-auto p-8 w-full md:w-1/3 h-full bg-black bg-opacity-70">
                 <p>Описание love story съемки</p>
