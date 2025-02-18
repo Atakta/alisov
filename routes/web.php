@@ -5,6 +5,7 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MessageController;
 
 
 Route::get('/', [MainController::class, 'home']);
@@ -23,5 +24,6 @@ Route::get('/order/{package}', [PackageController::class, 'getPackage']);
 
 Route::get('/contacts', [MainController::class, 'contacts']);
 
+Route::post('/contacts/check', [MessageController::class, 'check']);
 
 

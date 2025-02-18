@@ -17,9 +17,8 @@
             <div class="flex flex-col max-w-max mx-auto pt-40 md:mx-0 md:pl-40">
                 <h1 class="font-bold tracking-tighter text-5xl">Привет, меня зовут</h1>
                 <h2 class="font-comforter text-secondary text-6xl text-shadow-custom translate-x-8">Дмитрий Алисов</h2>
-                <p class="text-accent uppercase text-base">Я опытный фотограф</p>
-                <button class="self-center text-white uppercase rounded-md bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300
-                dark:focus:ring-teal-800 font-medium text-sm px-5 py-2 mt-6 text-center mr-2 mb-2" onclick="my_modal.showModal()">Заказать</button>
+                <p class="uppercase text-base">Я опытный фотограф</p>
+                <button class="self-center text-white uppercase rounded-full border border-white font-medium text-sm px-5 py-2 mt-6 text-center transition duration-300 hover:border-secondary hover:scale-105" onclick="my_modal.showModal()">Заказать</button>
                 <dialog id="my_modal" class="modal modal-bottom sm:modal-middle text-black text-left">
                     <div class="modal-box">
                         <h3 class="text-lg font-bold text-center">Заказать фотосессию</h3>
@@ -39,7 +38,7 @@
                                            placeholder="Ваш email">
                                 </div>
                                 <div class="mb-4">
-                                    <label for="tel" class="block text-sm font-medium">Номер телефона</label>
+                                    <label for="phone" class="block text-sm font-medium">Номер телефона</label>
                                     <input type="tel" id="phone" name="phone" required
                                            class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                                            placeholder="Ваш телефон">
