@@ -21,7 +21,17 @@
                     <img src="{{ asset('img/logo.png') }}" alt="Логотип" class="max-w-12">
                 </a>
             </div>
-            <ul class="flex items-center space-x-12 tracking-widest uppercase text-xs">
+            <div class="md:hidden">
+                <button id="burger" class="text-secondary focus:outline-none">
+                    <svg id="burger-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <ul id="menu" class="hidden md:flex items-center space-x-12 tracking-widest uppercase text-xs">
                 <li>
                     <a href="/" class="inline-block border-b-2 {{ request()->is('/') ? 'text-secondary border-[#36DDA3]' : 'border-transparent' }} hover:text-secondary transition-colors duration-300 py-2">
                         Главная
@@ -49,6 +59,33 @@
                 </li>
             </ul>
         </div>
+        <ul id="mobile-menu" class="flex flex-col text-center text-2xl space-y-1 mt-4 md:hidden">
+            <li class="bg-black">
+                <a href="/" class="block {{ request()->is('/') ? 'bg-secondary bg-opacity-10' : 'bg-none' }} hover:text-secondary transition-colors duration-300 py-2">
+                    Главная
+                </a>
+            </li>
+            <li class="bg-black">
+                <a href="/services" class="block {{ request()->is('services') ? 'bg-secondary bg-opacity-10' : 'bg-none' }} hover:text-secondary transition-colors duration-300 py-2">
+                    Услуги
+                </a>
+            </li>
+            <li class="bg-black">
+                <a href="/portfolio" class="block {{ request()->is('portfolio') ? 'bg-secondary bg-opacity-10' : 'bg-none' }} hover:text-secondary transition-colors duration-300 py-2">
+                    Портфолио
+                </a>
+            </li>
+            <li class="bg-black">
+                <a href="/review" class="block {{ request()->is('review') ? 'bg-secondary bg-opacity-10' : 'bg-none' }} hover:text-secondary transition-colors duration-300 py-2">
+                    Отзывы
+                </a>
+            </li>
+            <li class="bg-black">
+                <a href="/contacts" class="block {{ request()->is('contacts') ? 'bg-secondary bg-opacity-10' : 'bg-none' }} hover:text-secondary transition-colors duration-300 py-2">
+                    Контакты
+                </a>
+            </li>
+        </ul>
     </nav>
 </header>
 

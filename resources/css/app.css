@@ -38,3 +38,15 @@ html {
 .service-shadow {
     box-shadow: 8px 8px 8px -5px rgba(54, 221, 163, 0.2);
 }
+
+#mobile-menu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out, opacity 0.9s ease-in-out;
+}
+
+#mobile-menu.show {
+    max-height: 500px;
+    opacity: 1;
+}

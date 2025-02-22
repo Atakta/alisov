@@ -1,27 +1,26 @@
 import './bootstrap';
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const burgerIcon = document.getElementById('burger-icon');
+    const closeIcon = document.getElementById('close-icon');
 
+    burger.addEventListener('click', function () {
+        const isMenuVisible = mobileMenu.classList.toggle('show');
+        burgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
 
-
-const video = document.querySelector('.video-background');
-
-const swiperText = new Swiper('.swiper', {
-    speed: 1600,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        prevEl: '.swiper-button-prev',
-        nextEl: '.swiper-button-next'
-    }
+        // Управляем свойством display
+        if (isMenuVisible) {
+            setTimeout(() => {
+                mobileMenu.classList.add('show');
+            }, 50);
+        } else {
+            setTimeout(() => {
+                mobileMenu.classList.remove('show');
+            }, 50);
+        }
+    });
 });
-
-
-swiperText.on('slideChange', function() {
-    gsap.to(video, 1.6, {
-        currentTime: (video.duration / (this.slides.length - 1)) * this.realIndex,
-        ease: Power2.easeOut,
-    })
-})
