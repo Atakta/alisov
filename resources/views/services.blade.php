@@ -20,7 +20,7 @@
         <p class="text-xl text-center font-bold -mt-6 relative z-2">Портретная съемка</p>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @foreach($portrets as $portret)
-                <div class="flex flex-col mt-12 bg-black service-shadow  p-12 transform hover:scale-105 transition duration-300">
+                <div class="flex flex-col mt-12 p-12 bg-black shadow-sm shadow-gray-700 transition duration-300 hover:shadow-lg">
                     <div class="mb-8">
                         <h3 class="text-2xl font-semibold text-center">{{  $portret->name }}</h3>
                         <p class="mt-8 text-gray-400">{{  $portret->description }}</p>
@@ -59,7 +59,7 @@
         <p class="text-xl text-center font-bold -mt-6 relative z-2">Свадебная съемка</p>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @foreach($weddings as $wedding)
-            <div class="flex flex-col mt-12 bg-black service-shadow  p-12 transform hover:scale-105 transition duration-300">
+            <div class="flex flex-col mt-12 p-12 bg-black shadow-sm shadow-gray-700 transition duration-300 hover:shadow-lg">
                 <div class="mb-8">
                     <h3 class="text-2xl font-semibold">{{  $wedding->name }}</h3>
                     <p class="mt-4 text-gray-400">{{  $wedding->description }}</p>
@@ -84,8 +84,6 @@
             @endforeach
         </div>
     </section>
-
-
             <!-- Love story фотосессии -->
     <section>
         <h1 class="mt-24 font-bold text-3xl uppercase">Съемка love story</h1>
@@ -99,7 +97,7 @@
         <p class="text-xl text-center font-bold -mt-6 relative z-2">Съемка love story</p>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @foreach($lovestories as $lovestory)
-                <div class="flex flex-col mt-12 bg-black service-shadow  p-12 transform hover:scale-105 transition duration-300">
+                <div class="flex flex-col mt-12 p-12 bg-black shadow-sm shadow-gray-700 transition duration-300 hover:shadow-lg">
                     <div class="mb-8">
                         <h3 class="text-2xl font-semibold">{{  $lovestory->name }}</h3>
                         <p class="mt-4 text-gray-400">{{  $lovestory->description }}</p>
