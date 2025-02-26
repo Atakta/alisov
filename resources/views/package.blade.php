@@ -25,7 +25,9 @@
                     <label for="phone" class="block text-sm font-medium">Номер телефона</label>
                     <input type="tel" id="phone" name="phone" required
                            class="mt-1 block w-full p-2 bg-green-600 bg-opacity-40 rounded-md focus:outline-none focus:ring focus:ring-green-800"
-                           placeholder="Ваш телефон">
+                           placeholder="Ваш телефон"
+                           pattern="^\+375[0-9]{9}$"
+                           title="Введите номер телефона в формате: +375291111111">
                 </div>
                 <div class="mb-4">
                     <p class="">Выбранный пакет: {{ $package->name }}</p>

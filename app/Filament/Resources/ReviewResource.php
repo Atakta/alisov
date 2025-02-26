@@ -23,13 +23,25 @@ class ReviewResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getLabel(): string
+    {
+        return 'Отзыв';
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return 'Отзывы';
+    }
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name'),
-                TextInput::make('email'),
+                TextInput::make('name')
+                    ->label('Имя'),
+                TextInput::make('email')
+                    ->label('Имейл'),
                 Select::make('status')
+                    ->label('Статус')
                     ->options([
                         'approved' => 'Approved',
                         'new' => 'New',
@@ -43,9 +55,12 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
-                TextColumn::make('email'),
+                TextColumn::make('name')
+                    ->label('Имя'),
+                TextColumn::make('email')
+                    ->label('Имейл'),
                 TextColumn::make('status')
+                    ->label('Статус'),
             ])
             ->filters([
                 //

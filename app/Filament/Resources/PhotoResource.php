@@ -25,6 +25,15 @@ class PhotoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getLabel(): string
+    {
+        return 'Фотография';
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return 'Фотографии';
+    }
     public static function form(Form $form): Form
     {
         $arr = [];
@@ -35,9 +44,12 @@ class PhotoResource extends Resource
         return $form
             ->schema([
                 Select::make('catalog')
+                    ->label('Каталог')
                     ->options($arr),
-                TextInput::make('title'),
-                FileUpload::make('url'),
+                TextInput::make('title')
+                    ->label('Описание'),
+                FileUpload::make('url')
+                    ->label('Путь к файлу'),
             ]);
     }
 
@@ -45,9 +57,12 @@ class PhotoResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('url'),
-                TextColumn::make('title'),
-                TextColumn::make('catalog'),
+                ImageColumn::make('url')
+                    ->label('Путь к файлу'),
+                TextColumn::make('title')
+                    ->label('Описание'),
+                TextColumn::make('catalog')
+                    ->label('Каталог'),
             ])
             ->filters([
                 //

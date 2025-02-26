@@ -23,9 +23,11 @@ class PackageController extends Controller
         $order->tel = $request->phone;
         $order->message = $request->message;
         $order->status = 'new';
+        $order->created_at = now();
         $order->save();
 
         return redirect()->back();
+
     }
     public function getPackage(Request $request, Package $package) {
         return view('package', compact('package'));
