@@ -6,6 +6,8 @@ use App\Filament\Resources\ReviewResource\Pages;
 use App\Filament\Resources\ReviewResource\RelationManagers;
 use App\Models\Review;
 use Filament\Forms;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -36,6 +38,9 @@ class ReviewResource extends Resource
     {
         return $form
             ->schema([
+                DateTimePicker::make('review_date')
+                    ->label('Дата и время')
+                    ->disabled(),
                 TextInput::make('name')
                     ->label('Имя'),
                 TextInput::make('email')
@@ -55,6 +60,9 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('review_date')
+                    ->label('Дата')
+                    ->disabled(),
                 TextColumn::make('name')
                     ->label('Имя'),
                 TextColumn::make('email')

@@ -6,6 +6,7 @@ use App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource\RelationManagers;
 use App\Models\Order;
 use Filament\Forms;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -38,8 +39,8 @@ class OrderResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('created_at')
-                    ->label('Дата')
+                DateTimePicker::make('created_at')
+                    ->label('Дата и время')
                     ->disabled(),
                 TextInput::make('name')
                     ->label('Имя')
