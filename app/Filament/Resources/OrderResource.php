@@ -4,7 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource\RelationManagers;
+use App\Models\Catalog;
 use App\Models\Order;
+use App\Models\Package;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Textarea;
@@ -37,6 +39,7 @@ class OrderResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $packages = Package::all();
         return $form
             ->schema([
                 DateTimePicker::make('created_at')
@@ -52,11 +55,9 @@ class OrderResource extends Resource
                 TextInput::make('tel')
                     ->label('Телефон')
                     ->required(),
-                TextInput::make('package.name')
+                Select::make('package_id')
                     ->label('Пакет услуг')
-                    ->formatStateUsing(function ($state) {
-                        return $state ? $state : 'Не выбран';
-                    }),
+                    ->options($packages->pluck('name', 'id')->toArray()),
                 Textarea::make('message')
                     ->label('Сообщение')
                     ->required()

@@ -50,6 +50,6 @@ form.addEventListener('submit', function(event) {
             formBox.classList.remove('hidden');
             formBox.classList.add('opacity-100');
             }, 100);
-
+        form.submit();
     }, 500); // Время должно совпадать с длительностью анимации
 });

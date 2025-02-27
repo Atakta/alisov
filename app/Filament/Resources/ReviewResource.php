@@ -42,9 +42,11 @@ class ReviewResource extends Resource
                     ->label('Дата и время')
                     ->disabled(),
                 TextInput::make('name')
-                    ->label('Имя'),
+                    ->label('Имя')
+                    ->disabled(),
                 TextInput::make('email')
-                    ->label('Имейл'),
+                    ->label('Имейл')
+                    ->disabled(),
                 Select::make('status')
                     ->label('Статус')
                     ->options([
@@ -52,7 +54,10 @@ class ReviewResource extends Resource
                         'new' => 'New',
                         'canceled' => 'Canceled',
                     ]),
-                RichEditor::make('review')->columnSpanFull()
+                Textarea::make('review')
+                    ->label('Отзыв')
+                    ->required()
+                    ->disabled(),
             ]);
     }
 
