@@ -56,7 +56,6 @@ class ReviewResource extends Resource
                     ]),
                 Textarea::make('review')
                     ->label('Отзыв')
-                    ->required()
                     ->disabled(),
             ]);
     }

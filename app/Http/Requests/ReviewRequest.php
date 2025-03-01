@@ -23,7 +23,7 @@ class ReviewRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3',
-            'email' => 'required|email|unique:reviews,email',
+            'email' => 'required|email',
             'review' => 'required|min:10|max:500'
         ];
     }

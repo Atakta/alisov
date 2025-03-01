@@ -26,7 +26,8 @@ class PackageController extends Controller
         $order->created_at = now();
         $order->save();
 
-        return redirect()->back();
+        /*return redirect()->back();*/
+        return response()->json(['message' => 'Заказ успешно создан!']);
 
     }
     public function getPackage(Request $request, Package $package) {

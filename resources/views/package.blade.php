@@ -6,7 +6,8 @@
         <h1 class="pt-16 font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Оставить заявку</h1>
         <p class="text-xl text-center font-bold -mt-6 relative z-2">Оформите заказ всего в пару кликов</p>
         <div class="mt-6 p-16 bg-[url('/public/img/order_bg.jpg')] bg-center bg-cover">
-            <form method="post" action="/order" class="mt-12 w-full md:w-2/4 mx-auto p-8 border border-white shadow-lg shadow-black">
+            <p id="successMessage" class="hidden my-4 text-center text-2xl"></p>
+            <form id="orderForm" method="post" action="/order" class="mt-12 w-full md:w-2/4 mx-auto p-8 border border-white shadow-lg shadow-black">
                 @csrf
                 <input type="hidden" name="package" value="{{$package->id}}">
                 <div class="mb-4">
@@ -47,3 +48,6 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+    @vite('resources/js/pages/order.js')
+@endpush

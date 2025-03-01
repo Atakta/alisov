@@ -23,7 +23,6 @@ class ReviewController extends Controller
         $review->save();
 
         Mail::to($review->email)->send(new ReviewAcceptMail());
-        session()->flash('success', 'Ваш отзыв успешно отправлен и появится здесь после того, как пройдет модерацию.');
-        return redirect()->route('review');
+        return response()->json(['message' => 'Ваш отзыв успешно отправлен и появится здесь после того, как пройдет модерацию.']);
     }
 }

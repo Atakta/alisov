@@ -1,11 +1,7 @@
 @extends('layouts.layout')
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('libs/swiper-bundle.min.css') }}">
-@endpush
-@push('scripts')
-    <script src="{{ asset('libs/gsap.min.js') }}" ></script>
-    <script src="{{ asset('libs/swiper-bundle.min.js') }}"></script>
+
 @endpush
 
 @section('title', 'Главная страница')
@@ -65,9 +61,9 @@
                                               class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
                                               placeholder="Ваши комментарии"></textarea>
                                 </div>
+                                <p id="successMessage" class="hidden my-4 text-center text-2xl"></p>
                                 <button type="submit" class="btn bg-black text-primary hover:bg-slate-700 border-none">Отправить</button>
                             </form>
-                            <p id="thankYouMessage" class="hidden text-center text-2xl">Спасибо за ваш заказ!</p>
                          </div>
                     </div>
                 </dialog>
@@ -119,5 +115,8 @@
         </div>
     </section>
 
-
 @endsection
+
+@push('scripts')
+    @vite('resources/js/pages/order.js')
+@endpush

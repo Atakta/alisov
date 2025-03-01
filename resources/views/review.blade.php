@@ -44,7 +44,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="/review/check">
+            <form id="reviewForm" method="post" action="/review/check">
                 @csrf
                 <div class="mb-4">
                     <label for="name" class="block text-sm font-medium">Имя</label>
@@ -65,6 +65,7 @@
                               class="mt-1 block w-full text-black p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-500 shadow-[inset_0px_3px_3px_2px_rgba(0,0,0,0.3)]"
                               placeholder="Ваш отзыв"></textarea>
                 </div>
+                <p id="thankYouMessage" class="hidden my-4 text-center text-xl"></p>
                 <div class="flex justify-center">
                     <button type="submit"
                             class="mt-3 text-white font-semibold px-6 py-2 border-2 border-white rounded-full transition duration-300 hover:bg-white hover:text-secondary">
@@ -76,3 +77,6 @@
     </div>
 </section>
 @endsection
+@push('scripts')
+    @vite('resources/js/pages/review.js')
+@endpush

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Rubik+Dirt&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     @stack('styles')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 </head>
 <body class="Bg text-primary">
 <header>
@@ -136,7 +136,7 @@
     </div>
 </footer>
 
-
+@vite('resources/js/app.js')
 </body>
 @stack('scripts')
 </html>

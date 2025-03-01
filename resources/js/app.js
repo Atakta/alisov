@@ -27,29 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-const form = document.getElementById('orderForm');
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Отменяем стандартное поведение отправки формы
 
-    // Получаем ссылку на форму и сообщение
 
-    const thankYouMessage = document.getElementById('thankYouMessage');
-    const formBox = document.getElementById('form_box');
-    const title = document.getElementById('form_title');
 
-    // Добавляем класс для плавного исчезновения формы
-    formBox.classList.add('opacity-0'); // Устанавливаем прозрачность в 0
-
-    // Ждем завершения анимации перед скрытием формы и показом сообщения
-    setTimeout(() => {
-        formBox.classList.add('hidden');
-        form.classList.add('hidden');
-        title.classList.add('hidden');
-        thankYouMessage.classList.remove('hidden'); // Убираем класс hidden, чтобы показать сообщение
-        setTimeout(() => {
-            formBox.classList.remove('hidden');
-            formBox.classList.add('opacity-100');
-            }, 100);
-        form.submit();
-    }, 500); // Время должно совпадать с длительностью анимации
-});

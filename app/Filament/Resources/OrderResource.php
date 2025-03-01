@@ -60,7 +60,6 @@ class OrderResource extends Resource
                     ->options($packages->pluck('name', 'id')->toArray()),
                 Textarea::make('message')
                     ->label('Сообщение')
-                    ->required()
                     ->disabled(),
                 Select::make('status')
                     ->label('Статус')
