@@ -44,8 +44,8 @@
             @endforeach
         </div>
         <div class="mt-12 flex flex-col items-center">
-            <p class="text-base font-bold text-center">Большое количество хороших отзывов поможет вам <br>  окончательно определиться с выбором</p>
-            <a href="/review" class="mt-6 border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Отзывы</a>
+            <p class="text-2xl font-bold text-center">Большое количество хороших отзывов поможет вам <br>  окончательно определиться с выбором</p>
+            <a href="/review" class="mt-6 border border-secondary rounded-full px-8 py-2 text-accent text-lg uppercase transform hover:scale-105 transition duration-300">Отзывы</a>
         </div>
 
     </div>

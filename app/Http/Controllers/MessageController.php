@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
-    public function check(Request $request): \Illuminate\Http\RedirectResponse
+    public function check(Request $request): \Illuminate\Http\JsonResponse /*RedirectResponse*/
     {
         // Валидация данных формы
         $request->validate([
@@ -23,8 +23,6 @@ class MessageController extends Controller
 
         // Отправка письма
         Mail::to('lemonka.mozg@gmail.com')->send(new ContactFormMail($data));
-
-        // Возврат на страницу с сообщением об успешной отправке
-        return back()->with('success', 'Ваше сообщение отправлено!');
+        return response()->json(['message' => 'Сообщение успешно отправлено!']);
     }
 }

@@ -8,4 +8,6 @@ class Package extends Model
 {
     public $timestamps = false;
     protected $fillable = ['name', 'description', 'price', 'status', 'services'];
+
+
 }

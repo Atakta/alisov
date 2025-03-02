@@ -20,6 +20,10 @@ export default {
             'rubik-dirt': ['Rubik Dirt', 'sans-serif'],
             comforter: ['Comforter Brush', 'cursive'],
         },
+        boxShadow: {
+            'emerald-sm': '0 1px 10px rgba(0, 0, 0, 0.5)',
+            'emerald-md': '0 3px 20px rgba(20, 184, 166, 0.5)',
+        },
     },
   },
   plugins: [

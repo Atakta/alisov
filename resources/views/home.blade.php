@@ -75,13 +75,15 @@
         <div class="container">
             <h1 class="font-rubik-dirt text-5xl text-secondary uppercase opacity-25 text-center">Обо мне</h1>
             <p class="text-xl text-center font-bold -mt-6 relative z-2">Несколько слов о фотографе</p>
-            <div class="bg-black mt-6 p-16 w-full md:w-1/2 lg:ml-32 lg:mt-20 flex flex-col shadow-md shadow-black">
-                <h2 class="text-center">Давайте познакомимся :)</h2>
-                <p class="pt-12">Описание, чем фотограф занимается.  It is a long established fact that a reader will be distracted by the readable content of
-                    a page when looking at its layout. The point of using Lorem Ipsum. It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout.   It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout. The point of using Lorem Ipsum. It is a long established fact that a
-                    reader will be distracted by the readable content of a page when looking at its layout. </p>
+            <div class="bg-black mt-6 p-16 w-full text-justify md:w-1/2 lg:ml-32 lg:mt-20 flex flex-col shadow-md shadow-black">
+                <h2 class="text-center text-xl">Давайте познакомимся :)</h2>
+                <p class="pt-12">Меня зовут Дмитрий Алисов, и я — фотограф с более чем 5-летним опытом, живущий и работающий в прекрасном городе Минске.
+                    Моя страсть к фотографии позволяет мне запечатлевать самые важные моменты жизни, будь то портретная съемка, свадебные торжества или
+                    романтичные lovestory. </p>
+                <p class="mt-6">Я верю, что каждая история уникальна, и стараюсь передать это в своих работах. Мой подход к съемке основан на креативности и внимании
+                    к деталям, что позволяет мне создавать яркие и запоминающиеся образы. Я также с радостью помогу вам с подбором образа, чтобы вы
+                    чувствовали себя комфортно и уверенно перед камерой.</p>
+                <p class="mt-6">Давайте вместе создадим что-то особенное, что будет радовать вас на протяжении многих лет!</p>
                 <div class="flex justify-center gap-8 mt-4">
                     <a href="/services" class="mt-6 border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Все услуги</a>
                     <a href="/portfolio" class="mt-6 border border-secondary rounded-full px-6 py-2 text-accent text-sm uppercase transform hover:scale-105 transition duration-300">Портфолио</a>

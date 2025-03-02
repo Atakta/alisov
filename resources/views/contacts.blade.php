@@ -12,13 +12,8 @@
     </div>
     <section class="mt-6 bg-[url('/public/img/contacts_bg.jpg')] bg-center bg-cover shadow-md shadow-black">
         <div class="container">
-            @if(session('success'))
-                <div class="text-secondary p-6">
-                    {{ session('success') }}
-                </div>
-            @endif
-            <div class="flex justify-between py-24 px-6">
-                <form method="post" action="/contacts/check">
+            <div class="flex justify-between py-24 px-12">
+                <form id="contactForm" method="post" action="/contacts/check">
                     @csrf
                     <p class="text-center font-bold mb-8">Связаться со мной</p>
                     <div class="mb-4">
@@ -47,6 +42,7 @@
                                   class="mt-1 block w-full p-2 bg-transparent focus:outline-none focus:ring-0 border-b-2 border-white focus:border-white shadow-none"
                                   placeholder="Ваше сообщение"></textarea>
                     </div>
+                    <p id="contactMessage" class="hidden my-4 text-center text-sm"></p>
                     <div class="flex justify-center">
                         <button type="submit"
                                 class="mt-3 text-white font-semibold px-6 py-2 border-2 border-white rounded-full transition duration-300 hover:bg-white hover:text-accent">
@@ -111,3 +107,6 @@
     </section>
 @endsection
 
+@push('scripts')
+    @vite('resources/js/pages/contact.js')
+@endpush
